@@ -1,0 +1,19 @@
+<h2>My Heroes</h2>
+
+<ul class="heroes">
+  <!-- Repeater directive -->
+  <!-- li is host -->
+  <!-- heroes holds the mock heroes from the HeroesCOmponent class -->
+  <!-- hero holds the current object for each iterartion through the list -->
+
+  <li
+    *ngFor="let hero of heroes"
+    [class.selected]="hero === selectedHero"
+    (click)="onSelect(hero)"
+  >
+    <span class="badge">{{ hero.id }}</span> {{ hero.name }}
+  </li>
+</ul>
+
+<!-- property binding -->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
